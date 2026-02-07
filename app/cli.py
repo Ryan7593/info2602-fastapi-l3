@@ -74,7 +74,7 @@ def create_category(username:str, cat_text:str):
             print("User doesn't exist")
             return 
         
-        category = db.exec(select(Category).where(Category.text == cat_text, Categpry.user_id == user.id)).one_or_noe()
+        category = db.exec(select(Category).where(Category.text == cat_text, Category.user_id == user.id)).one_or_noe()
         if category: 
             print("Category exists! Skipping creation")
             return
